@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@use "tailwindcss";
+
+@theme {
+  --color-primary: #2a85ff;
+  --color-theme-green: #83bf6e;
+  --color-theme-orange: #ff6a55;
+  --color-theme-purple: #8e59ff;
+  --color-theme-white: #ffffff;
+
+  /*secondary*/
+  --color-theme-secondary-orange-light: #ffbc99;
+  --color-theme-secondary-purple-light: #cabdff;
+  --colot-theme-blue-light: #b1e5fc;
+  --color-theme-secondary-mint-green: #b5e4ca;
+  --color-theme-secondary-soft-yellow: #ffd88d;
+
+  /*shades*/
+  --color-theme-shades-light: #9a9fa5;
+  --color-theme-shades-medium: #6f767e;
+  --color-theme-sahdes-dark: #6f767e;
+  --color-theme-shades-deep-dark: #111315;
+
+  /*neutral*/
+  --color-theme-neutral-100: #fcfcfc;
+  --color-theme-neutral-100: #fcfcfc;
+  --color-theme-neutral-200: #f4f4f4;
+  --color-theme-neutral-300: #efefef;
+  --color-theme-neutral-400: #6f767e;
+  --color-theme-neutral-500: #33383f;
+  --color-theme-neutral-600: #272b30;
+  --color-theme-neutral-700: #1a1d1f;
+  --color-theme-neutral-800: #111315;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
