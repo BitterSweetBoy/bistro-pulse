@@ -1,4 +1,5 @@
 @use "tailwindcss";
+@use "primeicons/primeicons.css";
 
 @theme {
   --color-primary: #2a85ff;
@@ -17,11 +18,10 @@
   /*shades*/
   --color-theme-shades-light: #9a9fa5;
   --color-theme-shades-medium: #6f767e;
-  --color-theme-sahdes-dark: #6f767e;
+  --color-theme-shades-dark: #6f767e; 
   --color-theme-shades-deep-dark: #111315;
 
   /*neutral*/
-  --color-theme-neutral-100: #fcfcfc;
   --color-theme-neutral-100: #fcfcfc;
   --color-theme-neutral-200: #f4f4f4;
   --color-theme-neutral-300: #efefef;
@@ -34,4 +34,16 @@
 
 body {
   font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.p-tooltip .p-tooltip-text {
+  background-color: #fcfcfc !important;
+  color: #2a85ff !important;
+}
+
+.p-tooltip .p-tooltip-arrow {
+  border-right-color: #efefef !important; 
 }
