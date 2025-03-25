@@ -35,11 +35,13 @@ export class AuthService {
   }
 
   logout(){
-    return this.http.post(this.apiUrl + '/auth/logou  t', {}).pipe(
+    return this.http.post(`${this.apiUrl}/auth/logout`, {}).pipe(
       tap(() => {
         this.authState.set({ loggedIn: false });
+      }, () => {
+        console.log('Error en logout');
       })
-    );
+    )
   }
 
 }
