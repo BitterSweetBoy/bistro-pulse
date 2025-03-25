@@ -1,15 +1,22 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { AuthService } from './shared/Services/auth.service';
 import { RouterOutlet } from '@angular/router';
-import { AppLayout } from "./layout/components/app.layout";
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppLayout],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss', 
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'bistro-pulse';
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.verifySession().subscribe();
+  }
 }

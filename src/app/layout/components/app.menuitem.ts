@@ -8,7 +8,7 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import { MegaMenuItem } from 'primeng/api'
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { NavigationService } from '../services/navigation.service';
-import { NavigationInterface } from '../../interfaces/NavigationInterface';
+import { NavigationInterface } from '../../shared/interfaces/NavigationInterface';
 
 @Component({
   selector: 'app-menuitem',
