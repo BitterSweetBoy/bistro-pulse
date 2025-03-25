@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AppMenuItem } from './app.menuitem';
 import { AvatarModule } from 'primeng/avatar';
 import { NavigationService } from '../services/navigation.service';
-import { NavigationInterface } from '../../interfaces/NavigationInterface';
-
+import { NavigationInterface } from '../../shared/interfaces/NavigationInterface';
 @Component({
   selector: 'app-menu',
   standalone: true,
