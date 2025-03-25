@@ -1,0 +1,65 @@
+<div class="mb-6">
+  <h2 class="text-gray-700 text-sm mb-2">
+    Bievenido <span class="text-primary font-bold">nuevamente</span>
+  </h2>
+  <h1 class="text-4xl font-bold mb-6">Iniciar Sesión</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="username" class="block text-sm font-medium text-neutral-600 mb-1">
+        Ingresa tu correo
+      </label>
+      <input
+        type="email"
+        placeholder="Username or email address"
+        class="w-full text-sm p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"  
+        formControlName="email"
+      />
+      <div class="mt-2" *ngIf="hasDisplayError('email') && form.controls['email'].hasError('required')">
+        <p-message
+          severity="error"
+          variant="simple"
+          size="small"
+          text="Por favor ingresa tu usario o correo">
+        </p-message>
+      </div>
+    </div>
+
+    <div class="mb-1">
+      <label for="password" class="block text-sm font-medium text-neutral-600 mb-1">
+        Ingresa tu contraseña
+      </label>
+      <input
+        type="password"
+        placeholder="Password"
+        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+        formControlName="password"
+      />
+      <div class="mt-2" *ngIf="hasDisplayError('password') && form.controls['password'].hasError('required')">
+        <p-message
+          severity="error"
+          variant="simple"
+          size="small"
+          text="Por favor ingresa tu contraseña">
+      </p-message>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between mt-6 mb-6">
+      <label class="flex items-center">
+        <input type="checkbox" class="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"/>
+        <span class="ml-2 text-sm text-neutral-600">Recuerdame</span>
+      </label>
+      <a href="#" class="text-sm text-primary hover:text-indigo-500">Olvidé mi contraseña</a>
+    </div>
+
+    <button type="submit" class="w-full bg-primary text-white font-medium py-3 rounded-lg hover:bg-theme-purple hover:cursor-pointer transition">
+      Sign in
+    </button>
+  </form>
+</div>
+
+<div class="text-center text-sm text-neutral-500">
+  ¿No tienes una cuenta ? <a href="#" class="text-primary">Registrate</a>
+</div>
+<p-toast position="top-center"></p-toast>
