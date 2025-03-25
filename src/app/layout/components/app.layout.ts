@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { AppSidebar } from './app.sidebar';
 import { AppTopbar } from './app.topbar';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [AppSidebar, AppTopbar, RouterOutlet, CommonModule],
+  imports: [AppSidebar,  RouterOutlet, AppTopbar, CommonModule],
   template: `
     <div class="h-screen flex">
       <!-- Sidebar -->
