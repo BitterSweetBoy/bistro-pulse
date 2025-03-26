@@ -25,6 +25,7 @@ export class AuthService {
   }
 
   verifySession(){
+    console.log(this.apiUrl)
     return this.http.get(`${this.apiUrl}/auth/session`).pipe(
       tap((res: any) => {
         this.authState.set({ loggedIn: true, user: res.user });
