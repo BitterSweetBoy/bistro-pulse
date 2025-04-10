@@ -3,8 +3,6 @@ const fs = require('fs');
 // Obtener las variables de entorno de Vercel
 const apiUrl = process.env.API_URL || '';
 const iconsBaseUrl = process.env.ICONS_BASE_URL || '';
-console.log('API_URL:', apiUrl);
-console.log('ICONS_BASE_URL:', iconsBaseUrl);
 
 // Leer el archivo de configuración de entorno (environment.ts)
 let envFile = fs.readFileSync('./src/environments/environment.ts', 'utf8');

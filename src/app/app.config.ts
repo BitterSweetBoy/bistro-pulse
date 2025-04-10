@@ -5,7 +5,7 @@ import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { provideNgIconLoader, withCaching } from '@ng-icons/core';
 import { HttpClient, provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment';
 import Aura from '@primeng/themes/aura';
 import { credentialsInterceptor } from './shared/utils/credentials.interceptor';
 
