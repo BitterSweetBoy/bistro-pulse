@@ -19,5 +19,3 @@ envFile = envFile.replace(
 
 // Guardar el archivo actualizado
 fs.writeFileSync('./src/environments/environment.ts', envFile);
-
-console.log('Variables de entorno inyectadas correctamente.');
