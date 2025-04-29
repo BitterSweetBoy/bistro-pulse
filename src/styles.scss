@@ -11,7 +11,7 @@
   /*secondary*/
   --color-theme-secondary-orange-light: #ffbc99;
   --color-theme-secondary-purple-light: #cabdff;
-  --colot-theme-blue-light: #b1e5fc;
+  --color-theme-blue-light: #b1e5fc;
   --color-theme-secondary-mint-green: #b5e4ca;
   --color-theme-secondary-soft-yellow: #ffd88d;
 
@@ -46,4 +46,41 @@ body {
 
 .p-tooltip .p-tooltip-arrow {
   border-right-color: #efefef !important; 
+}
+
+.p-datepicker .p-datepicker-next-button, .p-datepicker-prev-button {
+  color: var(--color-primary) !important;
+}
+
+.datepicker.panel.border.color{
+  color: var(--color-primary) !important;
+}
+
+.p-datepicker-day-selected{
+  background-color: var(--color-primary) !important;
+  color: var(--color-theme-white) !important;
+}
+
+.p-inputtext:enabled:focus{
+  border-color: var(--color-primary) !important;
+}
+.p-button-text:not(:disabled):active {
+  background: var(--color-theme-blue-light) !important;
+}
+
+.p-button-text:hover{
+  background: var(--color-theme-blue-light) !important;
+}
+
+.p-button-text{
+  color: var(--color-primary) !important;
+}
+
+.p-multiselect:not(.p-disabled).p-focus{
+  border-color: var(--color-primary) !important;
+}
+
+.p-checkbox-checked .p-checkbox-box{
+  border-color: var(--color-primary) !important;
+  background: var(--color-primary) !important;
 }
