@@ -4,6 +4,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegistrationComponent } from './components/auth/registration/registration.component';
 import { AppLayout } from './layout/components/app.layout';
 import { authGuard } from './shared/guards/auth.guard';
+import { CrearRestauranteComponent } from './restaurantes/crear-restaurante/crear-restaurante.component';
 
 export const routes: Routes = [
     {
@@ -19,5 +20,11 @@ export const routes: Routes = [
     {
         path: 'dashboard', component: AppLayout,
         canActivate: [authGuard]
+    },
+    {
+        path: 'restaurantes', component: AppLayout,
+        children: [
+            {path: 'nuevo-restaurante', component: CrearRestauranteComponent},
+        ]
     }
 ];

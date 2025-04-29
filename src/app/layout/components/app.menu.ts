@@ -25,6 +25,7 @@ export class AppMenu {
     {
       label: 'Dashboard',
       icon: 'dashboard',
+      routerLink: ['/dashboard'],
       roles: ['ADMIN', 'MANAGER', 'USER']
     },
     {
@@ -47,7 +48,7 @@ export class AppMenu {
         {
           label: 'Nuevo Restaurante',
           icon: undefined,
-          routerLink: ['/restaurants/request'],
+          routerLink: ['/restaurantes/nuevo-restaurante'],
           roles: ['ADMIN']
         }
       ]
