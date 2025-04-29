@@ -20,8 +20,8 @@ import { RouterOutlet } from '@angular/router';
         <app-topbar></app-topbar>
 
         <!-- Contenido con padding y estilo de recuadro -->
-        <div class="flex-1 p-6">
-          <div class="h-full p-6 rounded-lg shadow-md" style="background-color: #fefefe;">
+        <div class="flex-1 min-h-0 p-6 overflow-auto">
+          <div class="p-6 rounded-2xl shadow-lg" style="background-color: #fefefe;">
             <router-outlet></router-outlet>
           </div>
         </div>
