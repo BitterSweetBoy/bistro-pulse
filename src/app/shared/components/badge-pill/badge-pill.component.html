@@ -1,0 +1,11 @@
+<span
+    [ngClass]="['text-sm font-medium px-3 py-1 rounded-full inline-block',
+        variant === 'primary'
+          ? 'bg-blue-50 text-primary'
+          : variant === 'secondary'
+            ? 'bg-gray-100 text-gray-600'
+            : 'bg-neutral-200 text-neutral-800'
+      ]"
+    >
+      {{ label }}
+</span>
