@@ -1,6 +1,5 @@
-import { Component, effect, forwardRef, input, Input, output, Output, signal } from '@angular/core';
+import { Component, effect, forwardRef, input, signal } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { extractFile } from '../../helpers/image-utils';
 import { CommonModule } from '@angular/common';
 import { CoverImage } from '../../interfaces/restaurantInterface';
 

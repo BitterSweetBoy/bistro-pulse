@@ -1,6 +1,5 @@
-import { Component, computed, effect, EventEmitter, forwardRef, input, Input, output, Output, signal } from '@angular/core';
+import { Component, computed, effect, forwardRef, input, signal } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { extractFile } from '../../helpers/image-utils';
 import { GalleryImages } from '../../interfaces/restaurantInterface';
 import { CommonModule } from '@angular/common';
 import { GalleryItem } from '../../interfaces/restaurantInterface';
