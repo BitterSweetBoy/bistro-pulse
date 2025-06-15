@@ -1,0 +1,34 @@
+<div class="flex flex-wrap gap-4 justify-between">
+  @for (slot of displaySlots(); track slot.index) {
+  <div class="relative group">
+    @if (slot.item) {
+    <!-- Imagen cargada -->
+    <div class="w-25 h-25 sm:w-36 sm:h-30 border-2 border-dashed border-gray-300 rounded-lg overflow-hidden bg-white hover:border-primary transition-colors">
+      <img [src]="slot.item.src" [alt]="'Imagen ' + slot.item.id" class="w-full h-full object-cover"/>
+      <button
+        (click)="removeItem(slot.item.id)"
+        class="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
+        type="button"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    } @else {
+    <!-- Slot vacío para añadir foto -->
+    <label class="cursor-pointer">
+      <div
+        class="w-25 h-25 sm:w-36 sm:h-30 border-2 border-dashed border-gray-300 rounded-lg bg-white hover:border-primary transition-colors flex flex-col items-center justify-center text-gray-500 hover:text-primary"
+      >
+        <svg class="w-8 h-8 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+        </svg>
+        <span class="text-sm font-medium">Añadir Foto</span>
+      </div>
+      <input type="file" multiple accept="image/*" (change)="onFilesSelected($event)" class="hidden"/>
+    </label>
+    }
+  </div>
+  }
+</div>
