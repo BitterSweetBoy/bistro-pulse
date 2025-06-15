@@ -1,0 +1,10 @@
+<div [ngClass]="['mt-4', 'p-3', 'rounded-lg', bgClass]">
+    <div class="flex items-start">
+        <div [ngClass]="['w-5', 'h-5', 'flex', 'items-center', 'justify-center', 'mt-0.5', iconColorClass]">
+        <i [ngClass]="iconClass"></i>
+      </div>
+      <div class="ml-2">
+        <ng-content></ng-content>
+      </div>
+    </div>
+</div>
