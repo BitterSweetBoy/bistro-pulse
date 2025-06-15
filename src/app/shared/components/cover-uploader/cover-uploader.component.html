@@ -1,0 +1,15 @@
+<label
+  class="relative flex flex-col items-center justify-center w-full h-full border-2 border-dashed border-blue-400 rounded-lg bg-blue-50 cursor-pointer text-center transition-colors hover:bg-blue-100"
+>
+  <ng-container *ngIf="!hasPreview(); else showImage">
+    <svg class="w-10 h-10 text-blue-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M16 3v4M8 3v4m8 4H8"/>
+    </svg>
+    <span class="text-primary font-medium">{{ placeholder() }}</span>
+    <span class="text-neutral-500 text-xs mt-1">{{ hint() }}</span>
+  </ng-container>
+  <ng-template #showImage>
+    <img [src]="preview()" class="object-cover w-full h-full rounded-lg" alt="Cover preview" />
+  </ng-template>
+  <input type="file" accept="image/*" hidden (change)="onSelect($event)" />
+</label>
