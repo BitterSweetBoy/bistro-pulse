@@ -1,0 +1,75 @@
+<div [formGroup]="infoGroup" class="space-y-4 mb-10">
+  <span class="text-lg font-semibold text-neutral-900">Datos del Restaurante</span>
+
+  <div class="flex space-x-4">
+    <div class="flex-1">
+      <label class="block text-neutral-800">Nombre del restaurante</label>
+      <input
+        pInputText
+        formControlName="restaurantName"
+        placeholder="Sun valley restaurant"
+        appMarkAsDirtyOnBlur
+        class="w-full"
+      />
+    </div>
+    <div class="flex-1">
+      <label class="block text-neutral-800">Número Telefónico</label>
+      <input
+        pInputText
+        pKeyFilter="num"
+        formControlName="phoneNumber"
+        placeholder="95032543"
+        appMarkAsDirtyOnBlur
+        class="w-full"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label class="block text-neutral-800">Ubicación</label>
+    <input
+      pInputText
+      formControlName="location"
+      placeholder="Dirección completa"
+      appMarkAsDirtyOnBlur
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex space-x-4">
+    <div class="flex-1">
+      <label class="block text-neutral-800">Correo electrónico</label>
+      <input
+        type="email"
+        pInputText
+        formControlName="email"
+        placeholder="info@restaurante.com"
+        appMarkAsDirtyOnBlur
+        class="w-full"
+      />
+    </div>
+    <div class="flex-1">
+      <label class="block text-neutral-800">Tipo de Cocina</label>
+      <p-select
+        [options]="cuisineTypes"
+        formControlName="cocina"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Seleccionar"
+        class="w-full"
+      ></p-select>
+    </div>
+  </div>
+
+  <div>
+    <label class="block text-neutral-800">Descripción</label>
+    <textarea
+      pTextarea
+      formControlName="descripcion"
+      rows="4"
+      placeholder="Describe tu restaurante..."
+      appMarkAsDirtyOnBlur
+      class="w-full"
+    ></textarea>
+  </div>
+</div>
