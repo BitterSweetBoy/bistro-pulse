@@ -1,0 +1,87 @@
+<div [formGroup]="socialGroup" class="space-y-4 mb-10">
+  <span class="text-lg font-semibold text-neutral-900">Redes Sociales</span>
+
+  <div class="flex space-x-4">
+    <!-- Facebook -->
+    <div class="flex-1">
+      <label class="block text-neutral-800">Facebook</label>
+      <p-inputgroup>
+        <p-inputgroup-addon>
+          <i class="pi pi-facebook text-blue-600"></i>
+        </p-inputgroup-addon>
+        <input
+          pInputText
+          formControlName="facebook"
+          placeholder="sunvalleyrestaurant"
+          class="w-full"
+          appMarkAsDirtyOnBlur
+        />
+      </p-inputgroup>
+    </div>
+
+    <!-- Instagram -->
+    <div class="flex-1">
+      <label class="block text-neutral-800">Instagram</label>
+      <p-inputgroup>
+        <p-inputgroup-addon>
+          <i class="pi pi-instagram text-pink-600"></i>
+        </p-inputgroup-addon>
+        <input
+          pInputText
+          formControlName="instagram"
+          placeholder="sunvalleyrestaurant"
+          class="w-full"
+          appMarkAsDirtyOnBlur
+        />
+      </p-inputgroup>
+    </div>
+
+    <!-- TikTok -->
+    <div class="flex-1">
+      <label class="block text-neutral-800">TikTok</label>
+      <p-inputgroup>
+        <p-inputgroup-addon>
+          <i class="pi pi-tiktok text-black"></i>
+        </p-inputgroup-addon>
+        <input
+          pInputText
+          formControlName="tiktok"
+          placeholder="sunvalleyrestaurant"
+          class="w-full"
+          appMarkAsDirtyOnBlur
+        />
+      </p-inputgroup>
+    </div>
+  </div>
+
+  <!-- Otras redes dinámicas -->
+  <div formArrayName="others" class="space-y-2">
+    <div
+      *ngFor="let ctrl of others.controls; let i = index"
+      [formGroupName]="i"
+      class="flex items-center space-x-2"
+    >
+      <input
+        pInputText
+        [formControlName]="0"
+        placeholder="Otra red social"
+        class="flex-1"
+      />
+      <button
+        pButton
+        type="button"
+        icon="pi pi-times"
+        (click)="others.removeAt(i)"
+        class="p-button-text"
+      ></button>
+    </div>
+    <button
+      pButton
+      type="button"
+      icon="pi pi-plus"
+      label="Agregar otra red social"
+      (click)="addOther()"
+      class="p-button-text"
+    ></button>
+  </div>
+</div>
