@@ -1,0 +1,52 @@
+<div [formGroup]="imagesGroup" class="space-y-6">
+  <span class="block text-lg font-semibold text-neutral-900">
+    Imágenes del Restaurante
+  </span>
+
+  <!-- Cover -->
+  <div class="space-y-2">
+    <div class="flex items-center space-x-2">
+      <span class="text-md font-regular text-neutral-800">Foto de portada</span>
+      <app-badge-pill label="Principal" variant="primary"></app-badge-pill>
+    </div>
+    <p class="text-sm text-neutral-800">
+      Esta imagen aparecerá como principal en las búsquedas y en la cabecera de tu perfil.
+    </p>
+    <div class="h-110 w-full">
+      <app-cover-uploader
+        formControlName="cover"
+        [placeholder]="'+ Foto de Portada'"
+        [hint]="'Tamaño recomendado: 1280 × 720 px'"
+      ></app-cover-uploader>
+    </div>
+  </div>
+  <!-- Gallery -->
+  <div class="space-y-2">
+    <div class="flex items-center justify-between">
+      <span class="text-md font-regular text-neutral-800">Fotos Adicionales</span>
+      <span class="text-sm text-neutral-600">
+        {{ currentGalleryCount }} / {{ maxItems }} imágenes
+      </span>
+    </div>
+    <p class="text-sm text-neutral-800">
+      Añade fotos que muestren el ambiente, platos destacados o características especiales.
+    </p>
+    <div>
+      <app-gallery-uploader
+        formControlName="gallery"
+        [maxItems]="maxItems"
+      ></app-gallery-uploader>
+    </div>
+  </div>
+
+  <!-- Info Panel -->
+  <app-info-panel type="info">
+    <p class="text-sm text-gray-600">Recomendaciones para tus fotos:</p>
+    <ul class="text-xs text-gray-500 mt-1 space-y-1">
+      <li>Usa imágenes de alta calidad y buena iluminación</li>
+      <li>Muestra el ambiente, la decoración y los platos más representativos</li>
+      <li>Evita imágenes borrosas o con poca luz</li>
+      <li>Tamaño recomendado para fotos adicionales: 800 × 600 px</li>
+    </ul>
+  </app-info-panel>
+</div>
