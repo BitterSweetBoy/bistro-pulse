@@ -20,7 +20,7 @@ export class SocialMediaProfilesComponent {
   }
 
   addOther() {
-    // this.others.push(this.socialGroup.controls('').control);
+    this.others.push(new FormGroup({}));
   }
 
 }
