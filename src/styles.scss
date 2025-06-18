@@ -84,3 +84,15 @@ body {
   border-color: var(--color-primary) !important;
   background: var(--color-primary) !important;
 }
+
+.textarea.focus.border.color{
+  color: var(--color-primary) !important;
+}
+
+.textarea.hover.border.color{
+  color: var(--color-primary) !important;
+}
+
+.p-textarea:enabled:focus{
+  border-color: var(--color-primary) !important;
+}
