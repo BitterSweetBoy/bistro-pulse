@@ -1,4 +1,4 @@
-import { ApplicationConfig, inject, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, inject, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
@@ -8,10 +8,10 @@ import { HttpClient, provideHttpClient, withInterceptors, withInterceptorsFromDi
 import { environment } from '../environments/environment';
 import Aura from '@primeng/themes/aura';
 import { credentialsInterceptor } from './shared/utils/credentials.interceptor';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
+  providers: [    provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
     provideAnimationsAsync(),
     providePrimeNG({
@@ -27,5 +27,6 @@ export const appConfig: ApplicationConfig = {
       const http = inject(HttpClient);
       return http.get(`${environment.ICONS_BASE_URL}${name}.svg`, { responseType: 'text' });
     }, withCaching()),
+    importProvidersFrom(GoogleMapsModule)
   ]
 };
