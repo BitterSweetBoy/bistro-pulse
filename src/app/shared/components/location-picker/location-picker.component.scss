@@ -1,0 +1,7 @@
+:host ::ng-deep p-autoComplete.ng-invalid.ng-dirty  .p-inputtext{
+  border-color: #f44336;
+}
+
+:host ::ng-deep p-autoComplete.ng-invalid.ng-dirty  .p-inputtext::placeholder {
+  color: #dc2626;
+}

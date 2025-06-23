@@ -5,6 +5,7 @@
     </label>
     <p-autoComplete
       formControlName="address"
+      markAsDirtyOnBlur
       [suggestions]="suggestions()"
       (completeMethod)="searchByText($event)"
       (onSelect)="onSelect($event.value)"

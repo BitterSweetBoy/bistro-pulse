@@ -1,16 +1,15 @@
-import { Component, computed, effect, ElementRef, inject, Input, NgZone, signal, ViewChild } from '@angular/core';
+import { Component, computed, effect, inject, Input, signal } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoogleMap, MapAdvancedMarker } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
 import { PlaceResult } from '../../interfaces/places.interface';
 import { PlacesService } from '../../services/places.service';
-import { InputTextModule } from 'primeng/inputtext';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 
 
 @Component({
   selector: 'app-location-picker',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, GoogleMap, MapAdvancedMarker, InputTextModule, AutoCompleteModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, GoogleMap, MapAdvancedMarker, AutoCompleteModule],
   templateUrl: './location-picker.component.html',
   styleUrl: './location-picker.component.scss'
 })
