@@ -5,10 +5,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { TextareaModule } from 'primeng/textarea';
 import { SelectModule } from 'primeng/select';
+import { LocationPickerComponent } from '../location-picker/location-picker.component';
 
 @Component({
   selector: 'app-basic-info-restaurant',
-  imports: [CommonModule, ReactiveFormsModule, InputTextModule, KeyFilterModule, TextareaModule,SelectModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, InputTextModule, KeyFilterModule, TextareaModule, SelectModule, FormsModule, LocationPickerComponent],
   templateUrl: './basic-info-restaurant.component.html',
   styleUrl: './basic-info-restaurant.component.scss'
 })
@@ -27,5 +28,7 @@ export class BasicInfoRestaurantComponent {
     { label: 'Comida Rápida', value: 'comida-rapida' }
   ];
 
-
+  get locationFormGroup(): FormGroup {
+    return this.infoGroup.get('location') as FormGroup;
+  }
 }

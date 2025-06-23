@@ -1,4 +1,4 @@
-<div [formGroup]="infoGroup" class="space-y-4 mb-10">
+<div [formGroup]="infoGroup" class="space-y-4 mb-10 w-full">
   <span class="text-lg font-semibold text-neutral-900">Datos del Restaurante</span>
 
   <div class="flex space-x-4 mt-6">
@@ -26,14 +26,9 @@
   </div>
 
   <div>
-    <label class="block text-neutral-800">Ubicación</label>
-    <input
-      pInputText
-      formControlName="location"
-      placeholder="Dirección completa"
-      appMarkAsDirtyOnBlur
-      class="w-full"
-    />
+    <app-location-picker 
+      [locationFormGroup]="locationFormGroup">
+    </app-location-picker>
   </div>
 
   <div class="flex space-x-4">
