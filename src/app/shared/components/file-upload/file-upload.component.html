@@ -1,0 +1,42 @@
+<div id="fileUpload" class="w-full p-4 border rounded-md relative cursor-pointer" [class.opacity-50]="disabled">
+    <input
+        #fileInput
+        type="file"
+        [attr.accept]="acceptedTypes"
+        [attr.multiple]="maxFiles > 1 ? '' : null"
+        class="absolute inset-0 w-full h-full opacity-0 pointer-events-none"
+        (change)="onFileSelected($event)"
+        [disabled]="disabled"
+    />
+
+    <div class="flex items-center justify-between" (click)="onContainerClick()">
+        <ng-container *ngIf="selectedFiles.length === 0; else withFiles">
+            <div class="flex items-center justify-between w-full">
+                <span class="text-gray-700">{{ placeholder }}</span>
+                <div class="px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-700">
+                    Subir Archivo
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #withFiles>
+            <div class="flex items-center flex-wrap gap-2 w-full">
+                <ng-container *ngFor="let file of selectedFiles; let i = index; trackBy: trackByIndex">
+                    <div class="flex items-center px-3 py-2 bg-gray-200 rounded-full space-x-2 cursor-default">
+                        <span class="text-sm text-gray-800">{{ file.name }}</span>
+                        <span class="text-gray-800 cursor-pointer" title="Remove" (click)="removeFile(i); $event.stopPropagation()">
+                            &times;
+                        </span>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="selectedFiles.length < maxFiles">
+                    <div class="ml-auto px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-700">
+                        Subir Archivo
+                    </div>
+                </ng-container>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+<p-toast />
